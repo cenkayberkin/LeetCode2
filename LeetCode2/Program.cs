@@ -8,12 +8,17 @@ namespace LeetCode2
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine (IsPowerOfTwo (0));
+			int[] a = new int[]{ 1 };
+			ArrayOp o = new ArrayOp ();
+			int len = o.RemoveElement (a, 2);
+			for (int q = 0; q < len; q++) {
+				Console.WriteLine (a[q]);
+			}
 		}
 
 		public static bool IsPowerOfTwo(int n)
 		{
-			if (n < 0) {
+			if (n <= 0) {
 				return false;
 			}
 			if (((n - 1) & n) == 0) {

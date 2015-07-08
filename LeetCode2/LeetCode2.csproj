@@ -37,6 +37,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StackFromQueues.cs" />
     <Compile Include="QueueFromStack.cs" />
+    <Compile Include="ListOperations.cs" />
+    <Compile Include="ArrayOp.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
