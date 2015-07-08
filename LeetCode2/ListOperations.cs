@@ -12,13 +12,30 @@ namespace LeetCode2
 	{
 		public ListNode DeleteDuplicates(ListNode head) 
 		{
+			if (head == null) {
+				return null;
+			}
 
+			if (head.next == null) {
+				return head;
+			}
 
+			var tmp = head;
 
-
+			while (tmp != null) {
+				
+				if (tmp.next != null) {
+					if (tmp.val == tmp.next.val) {
+						tmp.next = tmp.next.next;		
+					} else {
+						tmp = tmp.next;	
+					}
+				} else {
+					tmp = tmp.next;	
+				}
+			}
+			return head;
 		}
-
-
 
 		public ListNode GetIntersectionNode(ListNode headA, ListNode headB) {
 			int lenA = 0;
