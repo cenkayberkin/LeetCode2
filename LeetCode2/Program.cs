@@ -8,15 +8,19 @@ namespace LeetCode2
 	{
 		public static void Main (string[] args)
 		{
-			StackFromQueues q = new StackFromQueues ();
-			q.Push (1);
-			q.Push (2);
-			q.Push (3);
-			q.Push (4);
-			q.Pop ();
-			q.Pop ();
-			q.Push (10);
-			Console.WriteLine (q.Top());
+			Console.WriteLine (IsPowerOfTwo (0));
+		}
+
+		public static bool IsPowerOfTwo(int n)
+		{
+			if (n < 0) {
+				return false;
+			}
+			if (((n - 1) & n) == 0) {
+				return true;
+			}else{
+				return false;
+			}
 		}
 	}
 }
