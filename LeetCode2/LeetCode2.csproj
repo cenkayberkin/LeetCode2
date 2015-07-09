@@ -40,6 +40,7 @@
     <Compile Include="ListOperations.cs" />
     <Compile Include="ArrayOp.cs" />
     <Compile Include="ExcelOp.cs" />
+    <Compile Include="TreeOp.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

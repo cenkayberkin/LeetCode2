@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LeetCode2
 {
@@ -8,9 +9,23 @@ namespace LeetCode2
 	{
 		public static void Main (string[] args)
 		{
-			ExcelOp o = new ExcelOp ();
-			Console.WriteLine (o.ConvertToTitle (1));
+//			int[] a = new int[]{ 1,2,3,4,5 };
+//			var t = a.Skip (2).Take (a.Length - 2);
+//			Console.WriteLine (string.Join(" ",t));
 
+			Console.WriteLine (IsPalindrome(1012));
+		}
+
+		public static bool IsPalindrome(int n)
+		{
+			string text = n.ToString ();
+			int len = text.Length - 1;
+			for (int i = 0; i < text.Length / 2; i++) {
+				if (text[i] != text[len - i]) {
+					return false;
+				}
+			}
+			return true;
 		}
 
 		public static bool IsPowerOfTwo(int n)

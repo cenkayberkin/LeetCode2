@@ -8,6 +8,8 @@ namespace LeetCode2
 		{
 		}
 
+
+
 		public int RemoveElement(int[] nums, int val) 
 		{
 			int toIndex = 0;
