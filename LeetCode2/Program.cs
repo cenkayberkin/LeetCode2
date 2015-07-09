@@ -13,7 +13,9 @@ namespace LeetCode2
 //			var t = a.Skip (2).Take (a.Length - 2);
 //			Console.WriteLine (string.Join(" ",t));
 
-			Console.WriteLine (IsPalindrome(1012));
+			ExcelOp o = new ExcelOp ();
+
+			Console.WriteLine (o.ConvertToNum ("AA"));
 		}
 
 		public static bool IsPalindrome(int n)
