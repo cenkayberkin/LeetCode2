@@ -43,11 +43,20 @@ namespace LeetCode2
 			n51.left = n61;
 			n51.right = n71;
 
-			TreeOp o = new TreeOp ();
+//			TreeOp o = new TreeOp ();
 //			Console.WriteLine (o.MaxDepth(n1));
 
-			Console.WriteLine (o.IsBalanced(n1));
+//			Console.WriteLine (o.IsBalanced(n1));
 //			Console.WriteLine (o.IsSameTree (n1, n11));
+
+
+			ArrayOp o = new ArrayOp ();
+			int[] input = new int[]{ 1,2,3};
+			var list = o.Subsets (input);
+			foreach (var item in list) {
+				Console.WriteLine (string.Join (" ", item));
+			}
+
 		}
 
 		public static bool IsPalindrome(int n)
