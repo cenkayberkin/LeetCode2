@@ -11,6 +11,55 @@ namespace LeetCode2
 		{
 		}
 
+		public bool SearchMatrix(int[,] matrix, int target) 
+		{
+
+			int row = matrix.GetLength (0);
+			int col = matrix.GetLength (1) ;
+
+			bool foundSmallerRow = false;
+			for (int i = 0; i < row; i++) {
+				if (matrix [i, col - 1] >= target) {
+					row = i;
+					foundSmallerRow = true;
+					break;
+				}
+			}
+
+			if (!foundSmallerRow) {
+				return false;
+			}
+
+			int[] arr = new int[col];
+
+			for (int i = 0; i < col; i++) {
+				arr [i] = matrix [row, i];	
+			}
+
+			return FindIt(arr,0,col,target) ;
+		}
+
+		public bool FindIt(int[] arr, int min, int max, int target)
+		{
+			if (min > max) {
+				return false;
+			}
+
+			int mid = (min + max) / 2;
+			if (arr[mid] == target) {
+				return true;
+			}
+
+			if (arr [mid] > target) {
+				return FindIt (arr, min, mid - 1, target);
+
+			} else {
+				return FindIt (arr, mid + 1, max, target);
+			}	
+
+			return true;
+		}
+
 		public IList<IList<int>> Subsets(int[] nums) 
 		{
 			IList<IList<int>> list = new List<IList<int>> ();
