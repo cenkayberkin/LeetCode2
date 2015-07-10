@@ -27,6 +27,7 @@ namespace LeetCode2
 
 			n7.right = n8;
 
+
 			TreeNode n11 = new TreeNode (10);
 			TreeNode n21 = new TreeNode (5);
 			TreeNode n31 = new TreeNode (8);
@@ -43,8 +44,9 @@ namespace LeetCode2
 			n51.right = n71;
 
 			TreeOp o = new TreeOp ();
-			Console.WriteLine (o.MaxDepth(n1));
+//			Console.WriteLine (o.MaxDepth(n1));
 
+			Console.WriteLine (o.IsBalanced(n1));
 //			Console.WriteLine (o.IsSameTree (n1, n11));
 		}
 

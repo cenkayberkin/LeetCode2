@@ -14,6 +14,19 @@ namespace LeetCode2
 
 	public class TreeOp
 	{	
+		public bool IsBalanced(TreeNode root) 
+		{
+			if (root == null) {
+				return true;
+			}
+
+			if (Math.Abs (MaxDepth (root.left) - MaxDepth (root.right)) > 1) {
+				return false;
+			}
+
+			return IsBalanced (root.left) && IsBalanced (root.right);
+		}
+
 		public int MaxDepth(TreeNode root) 
 		{
 			if (root == null) {
