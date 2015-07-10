@@ -14,6 +14,18 @@ namespace LeetCode2
 
 	public class TreeOp
 	{	
+		public int MaxDepth(TreeNode root) 
+		{
+			if (root == null) {
+				return 0;
+			}
+
+			int leftDepth = MaxDepth (root.left) + 1;
+			int rightDepth = MaxDepth (root.right) + 1;
+
+			return (int)Math.Max (leftDepth,rightDepth);
+		}
+
 		public bool IsSameTree(TreeNode p, TreeNode q) 
 		{
 			if (p == null && q == null) {

@@ -16,6 +16,7 @@ namespace LeetCode2
 			TreeNode n5 = new TreeNode (15);
 			TreeNode n6 = new TreeNode (13);
 			TreeNode n7 = new TreeNode (20);
+			TreeNode n8 = new TreeNode (35);
 
 			n1.left = n2;
 			n1.right = n5;
@@ -23,6 +24,8 @@ namespace LeetCode2
 			n2.right = n3;
 			n5.left = n6;
 			n5.right = n7;
+
+			n7.right = n8;
 
 			TreeNode n11 = new TreeNode (10);
 			TreeNode n21 = new TreeNode (5);
@@ -40,9 +43,9 @@ namespace LeetCode2
 			n51.right = n71;
 
 			TreeOp o = new TreeOp ();
+			Console.WriteLine (o.MaxDepth(n1));
 
-			Console.WriteLine (o.IsSameTree (n1, n11));
-
+//			Console.WriteLine (o.IsSameTree (n1, n11));
 		}
 
 		public static bool IsPalindrome(int n)
