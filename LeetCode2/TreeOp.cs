@@ -15,6 +15,30 @@ namespace LeetCode2
 	public class TreeOp
 	{	
 
+		public TreeNode TrimBst(TreeNode root, int min, int max)
+		{
+			if (root == null) {
+				return null;
+			}
+
+			root.left = TrimBst(root.left, min,max);
+			root.right = TrimBst(root.right, min,max);
+
+			if (root.val <= max && root.val >= min ) {
+				return root;
+			}
+
+			if (root.val < min) {
+				return root.right;
+			}
+
+			if (root.val > max) {
+				return root.left;
+			}
+
+			return null;
+		}
+
 		public void TreeLevelOrderPrintBottomUp(TreeNode root)
 		{
 			Queue<TreeNode> q = new Queue<TreeNode>();
@@ -63,8 +87,9 @@ namespace LeetCode2
 
 		}
 
-		public void TreeLevelOrderPrint(TreeNode root, Queue<TreeNode> q)
+		public void TreeLevelOrderPrint(TreeNode root)
 		{
+			Queue<TreeNode> q = new Queue<TreeNode>();
 			int curCount = 1;
 			int nextCount = 0;
 
