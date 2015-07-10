@@ -9,13 +9,27 @@ namespace LeetCode2
 	{
 		public static void Main (string[] args)
 		{
-//			int[] a = new int[]{ 1,2,3,4,5 };
-//			var t = a.Skip (2).Take (a.Length - 2);
-//			Console.WriteLine (string.Join(" ",t));
+			TreeNode n1 = new TreeNode (5);
+			TreeNode n2 = new TreeNode (3);
+			TreeNode n3 = new TreeNode (4);
+			TreeNode n4 = new TreeNode (1);
+			TreeNode n5 = new TreeNode (8);
+			TreeNode n6 = new TreeNode (7);
+			TreeNode n7 = new TreeNode (10);
 
-			ExcelOp o = new ExcelOp ();
+			n1.left = n2;
+			n1.right = n5;
 
-			Console.WriteLine (o.ConvertToNum ("AA"));
+			n2.left = n4;
+			n2.right = n3;
+
+			n5.left = n6;
+			n5.right = n7;
+
+			TreeOp o = new TreeOp ();
+//			o.PrintBst (n1);
+			Console.WriteLine (o.BstCheck (n1));
+
 		}
 
 		public static bool IsPalindrome(int n)
