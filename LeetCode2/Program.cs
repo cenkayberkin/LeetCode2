@@ -28,7 +28,8 @@ namespace LeetCode2
 
 			TreeOp o = new TreeOp ();
 //			o.PrintBst (n1);
-			Console.WriteLine (o.BstCheck (n1));
+			int[] last = new int[]{ int.MinValue };
+			Console.WriteLine (o.BstCheck2 (n1,last));
 
 		}
 

@@ -11,6 +11,26 @@ namespace LeetCode2
 
 	public class TreeOp
 	{	
+
+		public bool BstCheck2(TreeNode root,int[] last)
+		{
+			if (root == null) {
+				return true;
+			}
+
+			var left = BstCheck2 (root.left,last);
+
+			if (last[0] > root.val) {
+				return false;
+			}
+			last[0] = root.val;
+
+			var right = BstCheck2 (root.right, last);
+
+			return left && right; 
+		}
+
+
 		public bool BstCheck(TreeNode root,int min = int.MinValue , int max = int.MaxValue)
 		{
 			if (root == null) {
