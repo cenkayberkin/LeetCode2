@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LeetCode2
 {
@@ -11,6 +14,92 @@ namespace LeetCode2
 
 	public class TreeOp
 	{	
+
+		public void TreeLevelOrderPrintBottomUp(TreeNode root)
+		{
+			Queue<TreeNode> q = new Queue<TreeNode>();
+			Stack<string> stack = new Stack<string> ();
+
+			string tmp = "";
+
+			int curCount = 1;
+			int nextCount = 0;
+
+			if (root == null) {
+				return;
+			}
+
+			q.Enqueue (root);
+
+			while (q.Count > 0) {
+				var cur = q.Dequeue ();
+				curCount -= 1;
+
+				tmp += cur.val + " ";
+
+				var left = cur.left;
+				var right = cur.right;
+
+				if (left != null) {
+					q.Enqueue (left);
+					nextCount += 1;
+				}
+				if (right != null) {
+					q.Enqueue (right);	
+					nextCount += 1;
+				}
+				if (curCount == 0) {
+					stack.Push (tmp.TrimEnd(' '));
+					tmp = "";
+					curCount = nextCount;
+					nextCount = 0;
+				}
+
+			}
+
+			foreach (var item in stack.ToList()) {
+				Console.WriteLine (item);
+			}
+
+		}
+
+		public void TreeLevelOrderPrint(TreeNode root, Queue<TreeNode> q)
+		{
+			int curCount = 1;
+			int nextCount = 0;
+
+			if (root == null) {
+				return;
+			}
+
+			q.Enqueue (root);
+
+			while (q.Count > 0) {
+				var cur = q.Dequeue ();
+				curCount -= 1;
+				
+				Console.Write (cur.val + " ");
+
+				var left = cur.left;
+				var right = cur.right;
+
+				if (left != null) {
+					q.Enqueue (left);
+					nextCount += 1;
+				}
+				if (right != null) {
+					q.Enqueue (right);	
+					nextCount += 1;
+				}
+				if (curCount == 0) {
+					Console.WriteLine ("");
+					curCount = nextCount;
+					nextCount = 0;
+				}
+
+			}
+
+		}
 
 		public bool BstCheck2(TreeNode root,int[] last)
 		{
@@ -29,7 +118,6 @@ namespace LeetCode2
 
 			return left && right; 
 		}
-
 
 		public bool BstCheck(TreeNode root,int min = int.MinValue , int max = int.MaxValue)
 		{

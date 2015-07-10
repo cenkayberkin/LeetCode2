@@ -11,7 +11,7 @@ namespace LeetCode2
 		{
 			TreeNode n1 = new TreeNode (5);
 			TreeNode n2 = new TreeNode (3);
-			TreeNode n3 = new TreeNode (4);
+//			TreeNode n3 = new TreeNode (4);
 			TreeNode n4 = new TreeNode (1);
 			TreeNode n5 = new TreeNode (8);
 			TreeNode n6 = new TreeNode (7);
@@ -21,15 +21,19 @@ namespace LeetCode2
 			n1.right = n5;
 
 			n2.left = n4;
-			n2.right = n3;
+//			n2.right = n3;
 
 			n5.left = n6;
 			n5.right = n7;
 
 			TreeOp o = new TreeOp ();
 //			o.PrintBst (n1);
-			int[] last = new int[]{ int.MinValue };
-			Console.WriteLine (o.BstCheck2 (n1,last));
+//			int[] last = new int[]{ int.MinValue };
+//			Console.WriteLine (o.BstCheck2 (n1,last));
+
+			Queue<TreeNode> q = new Queue<TreeNode> ();
+
+			o.TreeLevelOrderPrintBottomUp(n1);
 
 		}
 
