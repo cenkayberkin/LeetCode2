@@ -11,6 +11,44 @@ namespace LeetCode2
 		{
 		}
 
+		public int SearchInsert(int[] nums, int target) 
+		{
+			return SearchInsertAux (nums, target, 0, nums.Length);
+		}
+
+		public int SearchInsertAux(int[] nums, int target,int lo, int hi)
+		{
+			if (lo > hi) {
+				return -1;
+			}
+
+			int mid = (hi + lo) / 2; 
+
+			if (nums[mid] == target) {
+				return mid;
+			}
+			if (nums [mid] > target) {
+				if (mid == 0) {
+					return 0;	
+				} else if (nums [mid - 1] < target) {
+					return mid;
+				}else if ( nums [mid - 1] == target){
+					return mid -1;
+				} else {
+					return SearchInsertAux (nums,target,0,mid - 1);
+				}
+			} else {
+				if (mid == nums.Length - 1) {
+					return nums.Length;	
+				} else if (nums [mid + 1] >= target) {
+					return mid + 1;
+				} else {
+					return SearchInsertAux (nums,target,mid+1,nums.Length);
+				}
+			}
+
+		}
+
 		public bool SearchMatrix(int[,] matrix, int target) 
 		{
 
@@ -18,6 +56,7 @@ namespace LeetCode2
 			int col = matrix.GetLength (1) ;
 
 			bool foundSmallerRow = false;
+
 			for (int i = 0; i < row; i++) {
 				if (matrix [i, col - 1] >= target) {
 					row = i;
