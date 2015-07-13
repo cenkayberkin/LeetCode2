@@ -40,7 +40,7 @@ namespace LeetCode2
 
 		public int SearchInsertAux(int[] nums, int target,int lo, int hi)
 		{
-			if (lo == hi) {
+			if (lo >= hi) {
 				
 				if (lo == nums.Length) {
 					return lo;

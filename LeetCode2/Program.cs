@@ -36,11 +36,16 @@ namespace LeetCode2
 //			TreeNode n61 = new TreeNode (13);
 //			TreeNode n71 = new TreeNode (20);
 
-			int[] arr = new int[]{ 3,5,8,10,15,25};
+//			int[] arr = new int[]{ 1};
+//
+//			ArrayOp o = new ArrayOp ();
+//			Console.WriteLine (o.SearchInsert (arr, 0));
+//			Console.WriteLine (o.searchInsert(arr,0));
 
-			ArrayOp o = new ArrayOp ();
-//			Console.WriteLine (o.SearchInsert (arr, 9));
-			Console.WriteLine (o.searchInsert(arr,9));
+			dinamicProblems d = new dinamicProblems ();
+//			Console.WriteLine (d.ClimbStairs (6));
+			Console.WriteLine (d.ClimbStairs3 (35));
+
 		}
 
 		public static bool IsPalindrome(int n)
