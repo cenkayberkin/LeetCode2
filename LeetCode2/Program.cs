@@ -36,10 +36,11 @@ namespace LeetCode2
 //			TreeNode n61 = new TreeNode (13);
 //			TreeNode n71 = new TreeNode (20);
 
-			int[] arr = new int[]{ 1,5,9,13,18,25};
+			int[] arr = new int[]{ 3,5,8,10,15,25};
 
 			ArrayOp o = new ArrayOp ();
-			Console.WriteLine (o.SearchInsert (arr, 32));
+//			Console.WriteLine (o.SearchInsert (arr, 9));
+			Console.WriteLine (o.searchInsert(arr,9));
 		}
 
 		public static bool IsPalindrome(int n)
