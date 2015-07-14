@@ -14,10 +14,40 @@ namespace LeetCode2
 
 	public class TreeOp
 	{	
+		public void Flatten(TreeNode root) 
+		{
+			if (root == null) {
+				return;
+			}
+			List<TreeNode> arr = new List<TreeNode> ();
+			Flatten(root,arr);
+
+			for (int i = 0; i < arr.Count ; i++) {
+				if (i + 1 < arr.Count) {
+					arr [i].right = arr [i + 1];
+					arr [i].left = null;
+				}
+			}
+
+		}
+
+		public void Flatten(TreeNode root, TreeNode prev) 
+		{
+			if (root == null) {
+				return;
+			}
+
+			Console.WriteLine (root.val);
+
+			Flatten (root.left,root);
+			Flatten (root.right,root);
+
+		}
+
 		public IList<IList<int>> LevelOrder(TreeNode root) 
 		{
 			if (root == null) {
-				
+				return new List<IList<int>> ();
 			}
 			IList<IList<int>> list = new List<IList<int>> ();
 			Queue<TreeNode> q = new Queue<TreeNode> ();
@@ -283,8 +313,10 @@ namespace LeetCode2
 			if (root == null) {
 				return;
 			}
-			PrintBst (root.left);
 			Console.Write (root.val + " ");
+
+			PrintBst (root.left);
+
 			PrintBst (root.right);
 		}
 	
