@@ -14,6 +14,68 @@ namespace LeetCode2
 
 	public class TreeOp
 	{	
+		public IList<IList<int>> LevelOrder(TreeNode root) 
+		{
+			if (root == null) {
+				
+			}
+			IList<IList<int>> list = new List<IList<int>> ();
+			Queue<TreeNode> q = new Queue<TreeNode> ();
+			q.Enqueue (root);
+
+			List<int> tmpList = new List<int> ();
+			int level = 1;
+			int counting = 0;
+
+			while (q.Count > 0) {
+				var tmp = q.Dequeue ();
+				tmpList.Add (tmp.val);
+				level -= 1;
+				Console.WriteLine (tmp.val + " ");
+
+
+				if (tmp.left != null) {
+					q.Enqueue (tmp.left);
+					counting += 1;
+				}
+				if (tmp.right != null) {
+					q.Enqueue (tmp.right);
+					counting += 1;
+				}
+				if (level == 0) {
+					list.Add (tmpList);
+					tmpList = new List<int> ();
+					Console.WriteLine ("");
+					level = counting;
+					counting = 0;
+				}
+
+			}
+
+			return list;
+		}
+
+
+		public int MinDepth(TreeNode root) 
+		{
+			if (root == null) {
+				return 0;
+			}
+
+			int left = MinDepth (root.left) + 1;
+			int right = MinDepth (root.right) + 1;
+
+			if (left == 1) {
+				return right;
+			}
+			if (right == 1) {
+				return left;
+			} else {
+				return  Math.Min(left,right);
+			}
+
+		}
+
 		public bool IsBalanced(TreeNode root) 
 		{
 			if (root == null) {
