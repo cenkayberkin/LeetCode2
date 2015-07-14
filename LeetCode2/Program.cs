@@ -25,12 +25,21 @@ namespace LeetCode2
 			n5.right = n6;
 
 			TreeOp o = new TreeOp ();
-			o.Flatten (n1);
+//			o.Flatten (n1);
+			o.Flatten3 (n1);
+
+			var tmp = n1;
+			while (tmp != null) {
+				Console.WriteLine (tmp.val);
+				tmp = tmp.right;
+			}
+
 //			Console.WriteLine ("");
 //			var e = o.LevelOrder (n1);
 //			Console.WriteLine ("");
 
 //			o.PrintBst (n1);
+
 		}
 
 		public static bool IsPalindrome(int n)
