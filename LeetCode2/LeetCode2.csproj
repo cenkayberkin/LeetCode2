@@ -42,6 +42,7 @@
     <Compile Include="ExcelOp.cs" />
     <Compile Include="TreeOp.cs" />
     <Compile Include="dinamicProblems.cs" />
+    <Compile Include="HouseRobber.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

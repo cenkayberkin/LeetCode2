@@ -42,10 +42,12 @@ namespace LeetCode2
 //			Console.WriteLine (o.SearchInsert (arr, 0));
 //			Console.WriteLine (o.searchInsert(arr,0));
 
-			dinamicProblems d = new dinamicProblems ();
+//			dinamicProblems d = new dinamicProblems ();
 //			Console.WriteLine (d.ClimbStairs (6));
-			Console.WriteLine (d.ClimbStairs3 (35));
-
+//			Console.WriteLine (d.ClimbStairs3 (35));
+			int[] houses = new int[]{};
+			HouseRobber r = new HouseRobber ();
+			Console.WriteLine (r.rob (houses));
 		}
 
 		public static bool IsPalindrome(int n)
